@@ -2,10 +2,14 @@
 <head> 
 <title> Test</title>
 <script>
-window.onload = function() {
-var json = '{ "name":"Me", "age": 104, "test": "whatever" }';
-var obj = JSON.parse(json);
-document.getElementById("voila").innerHTML = obj.test;
+window.onload = function httpGet(theUrl, callback) {
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function (){
+	if (xhr.readyState == 4 && xhr.status == 200)
+		callback(xhr.responseText);
+	}
+	xhr.open('get', 'http://pokeapi.co/api/v2/evolution-chain/?limit=20&offset=20', true);
+	xhr.send(null);
 }
 </script>
 </head>
