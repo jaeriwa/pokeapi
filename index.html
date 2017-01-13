@@ -1,0 +1,19 @@
+<html>
+<head> 
+<title> Test</title>
+<script>
+window.onload = function() {
+var json = '{ "name":"Me", "age": 104, "test": "whatever" }';
+var obj = JSON.parse(json);
+document.getElementById("voila").innerHTML = obj.test;
+}
+</script>
+</head>
+<body>
+<p id="voila">
+
+</p>	
+
+</body>
+
+</html>
