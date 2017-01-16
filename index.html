@@ -2,15 +2,32 @@
 <head> 
 <title> Test</title>
 <script>
-window.onload = function httpGet(theUrl, callback) {
+window.onload = function() {
 var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function (){
-	if (xhr.readyState == 4 && xhr.status == 200)
-		callback(xhr.responseText);
+var getJSON = function httpGet(theUrl, callback) {
+
+xhr.open('get', theUrl, true);
+xhr.responseType = 'json';
+xhr.onload = function (){
+	var status = xhr.status;
+	if (status == 200) {
+		callback(null, xhr.response);
+		} 	else {
+		calback(status);
+				}
+		}
+		xhr.send(null);
 	}
-	xhr.open('get', 'http://pokeapi.co/api/v2/evolution-chain/?limit=20&offset=20', true);
-	xhr.send(null);
-}
+	getJSON("http://pokeapi.co/api/v2/evolution-chain/?limit=20&offset=20",
+function(err, data) {
+  if (err != null) {
+    alert("Something went wrong: " + err);
+  } else {
+    console.log(data);
+  }
+});
+
+};
 </script>
 </head>
 <body>
