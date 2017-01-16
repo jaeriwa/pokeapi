@@ -5,7 +5,6 @@
 window.onload = function() {
 var xhr = new XMLHttpRequest();
 var getJSON = function httpGet(theUrl, callback) {
-
 xhr.open('get', theUrl, true);
 xhr.responseType = 'json';
 xhr.onload = function (){
@@ -18,17 +17,32 @@ xhr.onload = function (){
 		}
 		xhr.send(null);
 	}
-	getJSON("http://pokeapi.co/api/v2/evolution-chain/?limit=20&offset=20",
+	getJSON("http://pokeapi.co/api/v2/pokemon",
 function(err, data) {
   if (err != null) {
     alert("Something went wrong: " + err);
   } else {
-    console.log(data);
+
+    var parent = document.getElementById('voila');
+    for(i=0; i < data.results.length; i++) {
+    console.log(data.results[i].name);
+    var p = document.createElement("p");
+    p.innerHTML = data.results[i].name;
+    p.className = "pokemon";
+    parent.appendChild(p);
+    }
   }
 });
-
 };
 </script>
+<style class="text/css">
+.pokemon {
+	font-size: 20px;
+}
+.pokemon::first-letter {
+	text-transform: uppercase;
+}
+</style>
 </head>
 <body>
 <p id="voila">
