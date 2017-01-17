@@ -3,36 +3,36 @@
 <title> Test</title>
 <script>
 window.onload = function() {
-var xhr = new XMLHttpRequest();
-var getJSON = function httpGet(theUrl, callback) {
-xhr.open('get', theUrl, true);
-xhr.responseType = 'json';
-xhr.onload = function (){
-	var status = xhr.status;
-	if (status == 200) {
-		callback(null, xhr.response);
-		} 	else {
-		calback(status);
-				}
-		}
-		xhr.send(null);
-	}
-	getJSON("http://pokeapi.co/api/v2/pokemon",
-function(err, data) {
-  if (err != null) {
-    alert("Something went wrong: " + err);
-  } else {
+// var xhr = new XMLHttpRequest();
+// var getJSON = function httpGet(theUrl, callback) {
+// xhr.open('get', theUrl, true);
+// xhr.responseType = 'json';
+// xhr.onload = function (){
+// 	var status = xhr.status;
+// 	if (status == 200) {
+// 		callback(null, xhr.response);
+// 		} 	else {
+// 		calback(status);
+// 				}
+// 		}
+// 		xhr.send(null);
+// 	}
+// 	getJSON("http://pokeapi.co/api/v2/pokemon",
+// function(err, data) {
+//   if (err != null) {
+//     alert("Something went wrong: " + err);
+//   } else {
 
-    var parent = document.getElementById('voila');
-    for(i=0; i < data.results.length; i++) {
-    console.log(data.results[i].name);
-    var p = document.createElement("p");
-    p.innerHTML = data.results[i].name;
-    p.className = "pokemon";
-    parent.appendChild(p);
-    }
-  }
-});
+//     var parent = document.getElementById('voila');
+//     for(i=0; i < data.results.length; i++) {
+//     console.log(data.results[i].name);
+//     var p = document.createElement("p");
+//     p.innerHTML = data.results[i].name;
+//     p.className = "pokemon";
+//     parent.appendChild(p);
+//     }
+//   }
+// });
 };
 </script>
 <style class="text/css">
