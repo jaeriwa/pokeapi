@@ -1,41 +1,8 @@
 <html>
 <head> 
 <title> Test</title>
-<script type="text/javascript" src="jsonnode.js"></script>
-<script>
-window.onload = function() {
-// var xhr = new XMLHttpRequest();
-// var getJSON = function httpGet(theUrl, callback) {
-// xhr.open('get', theUrl, true);
-// xhr.responseType = 'json';
-// xhr.onload = function (){
-// 	var status = xhr.status;
-// 	if (status == 200) {
-// 		callback(null, xhr.response);
-// 		} 	else {
-// 		calback(status);
-// 				}
-// 		}
-// 		xhr.send(null);
-// 	}
-// 	getJSON("http://pokeapi.co/api/v2/pokemon",
-// function(err, data) {
-//   if (err != null) {
-//     alert("Something went wrong: " + err);
-//   } else {
-
-//     var parent = document.getElementById('voila');
-//     for(i=0; i < data.results.length; i++) {
-//     console.log(data.results[i].name);
-//     var p = document.createElement("p");
-//     p.innerHTML = data.results[i].name;
-//     p.className = "pokemon";
-//     parent.appendChild(p);
-//     }
-//   }
-// });
-};
-</script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="myjsonfile.json"></script>
 <style class="text/css">
 .pokemon {
 	font-size: 20px;
@@ -48,6 +15,54 @@ window.onload = function() {
 <body>
 <p id="voila">
 
+
 </p>	
+<header>Pokemonz</header>
+<article>
+<h1>Name</h1>
+<details>
+<summary>Stats</summary>
+<dl>
+<dt>Type</dt>
+<dd>Type 1</dd>
+<dd>Type 2</dd>
+<dt>Base experience</dt>
+<dd>no</dd>
+<dt>Height</dt>
+<dd>no</dd>
+<dt>Weight</dt>
+<dd>no</dd>
+<dt>Abilities</dt>
+<dd>ability name</dd>
+</dl>
+</details>
+<details>
+<summary>Encounters</summary>
+<dl>
+<dt>Encounter Methods - Name</dt>
+<dd>Methods by which the player might can encounter Pokémon in the wild, e.g., walking in tall grass</dd>
+<dt>Encounter Conditions</dt>
+<dd>Conditions which affect what pokemon might appear in the wild, e.g., day or night.</dd>
+<dt>Encounter Condition Values</dt>
+<dd>Encounter condition values are the various states that an encounter condition can have, i.e., time of day can be either day or night.</dd>
+</dl>
+</details>
+<details>
+<summary>Games</summary>
+<dl>
+<dt>Games</dt>
+<dd>Game name</dd>
+<dd>Game name</dd>
+</dl>
+</details>
+<details>
+<summary>Games</summary>
+<dl>
+<dt>Games</dt>
+<dd>Game name</dd>
+<dd>Game name</dd>
+</dl>
+</details>
+</article>
 </body>
 </html>

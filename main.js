@@ -18,7 +18,14 @@ function init() {
  loadJSON(function(response) {
   // Parse JSON string into object
     var actual_JSON = JSON.parse(response);
+    var voila = document.getElementById("voila");
+    for (i=0; i<actual_JSON.results.length; i++) {
+    var p = document.createElement("P");
+    p.className += "pokemon";
+    p.innerHTML = actual_JSON.results[i].name;
+    voila.appendChild(p);
 	console.log(actual_JSON.results[i].name);
+    };
  });
 }
 
